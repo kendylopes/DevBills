@@ -1,9 +1,10 @@
+import Button from "../components/Button";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the main page of our application.</p>
+    <div className="bg-purple-800">
+      <h2 className="text-primary-500">Home Page</h2>
+      <Button variant="outline">Clique em mim</Button>
     </div>
   );
 }
