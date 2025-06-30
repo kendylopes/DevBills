@@ -1,15 +1,15 @@
+import { Navigate, Outlet } from "react-router";
+import { useAuth } from "../context/AuthContext";
 
 
 const PrivateRoutes = () => {
 
-  return (
+  const {authState} = useAuth();
 
-    <div>
-      <h1>Private Routes</h1>
-      {/* Aqui você pode adicionar as rotas privadas que precisam de autenticação */}
-    </div>
-
-  )
+  if(!authState.user){
+    return <Navigate to='/login' replace/>
+  }
+  return <Outlet/>
 }
 
 export default PrivateRoutes;
