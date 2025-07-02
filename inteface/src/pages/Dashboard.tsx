@@ -1,4 +1,20 @@
+import { use, useEffect } from "react";
+import { api} from "../services/api";
+
 const Dashboard = () => {
+
+  useEffect(() => {
+
+    async function getTransactions() {
+      const response = await api.get('/transactions');
+      
+      console.log(response);
+    }
+
+    getTransactions()
+
+  }, []);
+
   return (
     <div className="container-app min-h-screen flex items-center justify-center bg-gray-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
